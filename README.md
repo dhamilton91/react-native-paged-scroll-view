@@ -23,10 +23,8 @@ var PagedScrollView = AddPaging(ScrollView)
 
   ...
   handlePageChange (state) {
-    console.log('current horizontal page:', state.currentHorizontalPage)
-    console.log('current vertical page:  ', state.currentVerticalPage)
-    console.log('total horizontal pages: ', state.totalHorizontalPages)
-    console.log('total vertical pages:   ', state.totalVerticalPages)
+    console.log('current page:', state.currentPage)
+    console.log('total pages:   ', state.totalPages)
   }
 
   render () {
@@ -56,22 +54,19 @@ Wrap either a `ScrollView` or a component functionally equivalent (implements `o
 
 **Props**:
 - `onPageChange`: `function(state)`: Executed on initial layout, when the page changes, or when the inner content changes. Callback is passed `state` object containing:
-  - `totalHorizontalPages`: total number of horizontal pages, rounded to the nearest integer.
-  - `totalVerticalPages`: total number of vertical pages, rounded to the nearest integer.
-  - `currentHorizontalPage`: the current horizontal page, rounded to the nearest integer.
-  - `currentVerticalPage`: the current vertical page, rounded to the nearest integer.
+  - `horizontal`: boolean.
+  - `totalPages`: total number of pages, rounded to the nearest integer.
+  - `currentPage`: the current page, rounded to the nearest integer.
 - `onInitialization`: `function(ref)`: Executed once, when the component is initially mounted and only once the dimensions have been measured. Useful, for example, for scrolling to a specific page once the component is mounted.
 
 **Attributes**:
 - `ref.scrollX`: current horizontal scroll offset
 - `ref.scrollY`: current vertical scroll offset
-- `ref.state.currentHorizontalPage`: as defined above
-- `ref.state.currentVerticalPage`: as defined above
-- `ref.state.totalHorizontalPages`: as defined above
-- `ref.state.totalVerticalPages`: as defined above
+- `ref.state.currentPage`: as defined above
+- `ref.state.totalPages`: as defined above
 
 **Methods**:
-- `ref.scrollToPage(horizontal, vertical, animated)`: Scroll to a specific page
+- `ref.scrollToPage(page, animated)`: Scroll to a specific page
 
 # License
 (c) 2015 Ricky Reusser. MIT License.
