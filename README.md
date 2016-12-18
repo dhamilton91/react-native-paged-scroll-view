@@ -42,7 +42,7 @@ var PagedScrollView = AddPaging(ScrollView)
 ## Installation
 
 ```bash
-$ npm install react-native-paged-scroll-view
+$ npm install dhamilton91/react-native-paged-scroll-view
 ```
 
 ## Usage
